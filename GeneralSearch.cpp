@@ -1,12 +1,5 @@
 #include "GeneralSearch.h"
 
-// **************** remove *****************
-class DiagnosisState;
-// **************** remove *****************
-
-
-
-
 void GeneralSearch::expand(const Node &node, const Problem &problem, list<const Node*> &out)
 {
 	vector<const ActionState*> legalActions;
@@ -71,17 +64,6 @@ const Node* GeneralSearch::graphSearch(const Problem &problem, SimpleQueue<const
 		// get the next state
 		node = fringe.removeFirst();
 		state = &node->state();
-
-
-
-
-		// ***************** remove ****************
-		DiagnosisState *realState = (DiagnosisState*)state;
-		// ***************** remove ****************
-
-
-
-
 
 		// check if it's a goal state
 		if (problem.isGoalState(*state))
